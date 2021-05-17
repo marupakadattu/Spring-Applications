@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:p="http://www.springframework.org/schema/p"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans 
+               http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+ 
+
+    <bean id="customer" class="com.scanner.bank.Customer">
+        <property name="cAccounntNumber" value="11234567892"></property>
+        <property name="cName" value="hema"></property>
+        <property name="cAccountType">
+            <set>
+                <value>Savings</value>
+                <value>Current</value>
+            </set>
+        </property>
+        <property name="cPhone" value="9876543223"></property>
+        <property name="loans">
+            <set>
+                <value>Gold Loan</value>
+                <value>House Loan</value>
+                <value>Car Loan</value>
+            </set>
+        </property>
+        <property name="acc" ref="Account"></property>
+        <property name="withDraw" ref="Withdraw"></property>
+        <property name="loan" ref="loan"></property>
+    </bean>
+
+ 
+
+    <bean id="Account" class="com.scanner.bank.Account">
+    <property name="accountNumber" value="11234567892"></property>
+    <property name="accountType">
+    <set>
+                <value>Savings</value>
+                <value>Current</value>
+            </set>
+    </property>
+    </bean>
+    <bean id="Withdraw" class="com.scanner.bank.Withdraw">
+    <property name="withDrawType">
+            <set>
+                <value>ATM</value>
+                <value>CardLess</value>
+                <value>Check</value>
+            </set>
+        </property>
+        <property name="withDrawId" value="10002100213f6"></property>
+    </bean>
+<bean id="loan" class="com.scanner.bank11234567892.Loan">
+<property name="loanId" value="564872356"></property>
+<property name="loanType" >
+<set>
+                <value>Gold Loan</value>
+                <value>House Loan</value>
+                <value>Car Loan</value>
+            </set>
+</property>
+<property name="loanAmount" value="500032.00"></property>
+<property name="Interest" value="2030.32"></property>
+
+ 
+
+</bean>
+</beans>

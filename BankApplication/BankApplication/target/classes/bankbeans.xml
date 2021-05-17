@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!-- bean definitions here -->
+ 
+<bean class="com.bankbeans.Customer" id="bank1">
+<property value="20281" name="custId"/>
+<property value="hema" name="custName"/>
+<property value="8125206040" name="phoneNumber"/>
+<property name="loans">
+<set>
+<ref bean="loan"/>
+<ref bean="loan1"/>
+</set>
+</property>
+<property name="accounts">
+<set>
+<ref bean="account1"/>
+<ref bean="account2"/>
+</set>
+</property>
+<property name="transaction">
+<list>
+<ref bean="transa"/>
+<ref bean="transa1"/>
+</list>
+</property>
+</bean>
+<bean class="com.bankbeans.Account" id="account1">
+<property value="111002386301045" name="accNo"/>
+<property value="Saving" name="accType"/>
+</bean>
+
+<bean class="com.bankbeans.Account" id="account2">
+<property value="111005686301078" name="accNo"/>
+<property value="Current" name="accType"/>
+</bean>
+<bean class="com.bankbeans.Transactions" id="transa">
+<property value="1" name="tId"/>
+<property value="NEFT" name="tType"/>
+</bean>
+<bean class="com.bankbeans.Transactions" id="transa1">
+<property value="2" name="tId"/>
+<property value="RGTS" name="tType"/>
+</bean>
+<bean class="com.bankbeans.Loans" id="loan">
+<property value="1" name="lId"/>
+<property value="persnal" name="type"/>
+<property value="500000" name="amount"/>
+</bean>
+<bean class="com.bankbeans.Loans" id="loan1">
+<property value="5" name="lId"/>
+<property value="home" name="type"/>
+<property value="2000000" name="amount"/>
+</bean>
+</beans>
